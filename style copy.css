@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif ;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.banner{ 
+    width: 100%;
+    display: flex;
+    background: #540172;
+    color: #ffffff;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.banner a{
+    text-decoration: none;
+    color: white;
+}
+
+.banner .ads-text{
+    display: flex;
+    justify-content: space-around;
+    padding: 2px;
+}
+
+.head-banner{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+
+header,
+footer {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    background: #ffffff;
+    color: white;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow at the bottom */
+    z-index: 1000; /* Ensure the header is above other content */
+}
+
+.header-container{
+display: flex;
+flex-direction: row;
+text-align: center;
+justify-content: space-around;
+align-items: center;
+z-index: 0;
+
+}
+
+
+
+form{
+    display: flex;
+    gap: 8px;
+}
+
+.search-bar{
+    width: 400px;
+}
+input{
+    padding: 10px;
+    height: 30px;
+    text-align: left;
+    border-radius: 5px;
+    border: 1px solid #42424262;
+    
+}
+#search-btn{
+    display: flex;
+    background: #7B00A8;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 2px #232323;
+}
+
+#search-btn:hover{
+    background: #540172;
+}
+
+.account{
+    color: #540172;
+}
+
+.account:hover{
+    color: #7B00A8;
+}
+.logout{
+    color: #ff0000;
+}
+.logout:hover{
+    color: #000000;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    padding: 10px;
+    gap: 10px;
+    padding-top: 150px;
+    
+}
+.icons{
+    display: flex;
+    justify-content: space-between;
+
+}
+.icons i{
+    margin-left: 20px;
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+    .header-container{
+        flex-direction: column;
+    }
+    #search-btn{
+        display: none;
+    }
+    .search-bar{
+        width: 150px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .header-container{
+        flex-direction: column;
+    }
+    #search-btn{
+        display: none;
+    }
+    .search-bar{
+        width: 150px;
+    }
+    .logout span{
+        display: none;
+    }
+    .account span{
+        display: none;
+    }
+    .icons{
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .icons i{
+        margin-left: 10px;
+    }
+}
