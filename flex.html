@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"
+        content="genielab is an organization dedicated to promoting art, design, and technology in rural or underserved communities in Ghana">
+    <meta name="keywords"
+        content="Genielab edutech, ngo ghana, non-profit, art foundation, design, technology, steam, stem, ghana robotics, foundation, charity, innovation">
+    <meta name="author" content="GenieDevGh">
+    <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="GenieLab">
+    <meta property="og:description"
+        content="genielab is an organization dedicated to promoting art, design, and technology in rural or underserved communities in Ghana">
+    <meta property="og:image" content="assets/og-img.jpg">
+    <meta property="og:url" content="https://genielab.rf.gd">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="Art, Design and Technology">
+    <meta name="twitter:title" content="GenieLab">
+    <meta name="twitter:description"
+        content="genielab is an organization dedicated to promoting art, design, and technology in rural or underserved communities in Ghana">
+    <meta name="twitter:image" content="assets/og-img.jpg">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Responsive Flexbox with Wrapping Cards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        h4,
+        p {
+            font-family: 'Kanit', sans-serif;
+            color: #333;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .img-container img {
+            width: 120px;
+        }
+
+        .icons,
+        .icons-2 {
+            display: flex;
+            gap: 20px;
+        }
+
+        .icons {
+            display: none;
+        }
+
+        .search-group form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .search-bar,
+        .categories,
+        input,
+        #search-btn {
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .search-bar {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        #search-btn {
+            background: #540172;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 2px #232323;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        #search-btn:hover {
+            background: #7B00A8;
+        }
+
+        .account,
+        .logout {
+            color: #540172;
+        }
+
+        .account:hover {
+            color: #7B00A8;
+        }
+
+        .logout:hover {
+            color: #ff0000;
+        }
+
+        main {
+            padding-top: 120px;
+            background: #FFCC00;
+            padding: 20px;
+        }
+
+        .wide-banner img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .card {
+            flex: 1 1 200px;
+            max-width: 250px;
+            background: #f2f2f2;
+            border: 2px solid #540172;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .price-tag {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #540172;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 0 0 8px 0;
+        }
+
+        .details {
+            padding: 10px;
+            text-align: left;
+        }
+
+        @media (max-width: 900px) {
+            .header-container {
+                flex-direction: column;
+            }
+
+            .icons {
+                display: flex;
+            }
+
+            .icons-2 {
+                display: none;
+            }
+
+            .search-bar {
+                width: 100%;
+            }
+
+            .categories {
+                width: 100%;
+            }
+
+            #search-btn span {
+                display: none;
+            }
+
+            #search-btn i {
+                display: inline;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .search-bar,
+            .categories {
+                width: 100%;
+            }
+
+            .account span,
+            .logout span {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="header-container">
+            <div class="img-container"><img src="img/logo.png" alt="GenieLab Logo"></div>
+            <div class="icons">
+                <div class="account"><i class="fa fa-user"></i><span>Account</span></div>
+                <div class="logout"><i class="fas fa-power-off"></i><span>Logout</span></div>
+            </div>
+            <div class="search-group">
+                <form>
+                    <input class="search-bar" type="text" placeholder="search for hostel">
+                    <button id="search-btn"><span>SEARCH</span><i class="fa fa-search"></i></button>
+                    <select class="categories">
+                        <option value="0" disabled selected>Select Campus</option>
+                        <option value="all-campuses">All Campuses</option>
+                        <option value="north-campus">North Campus</option>
+                        <option value="central-campus">Central Campus</option>
+                        <option value="south-campus">South Campus</option>
+                    </select>
+                </form>
+            </div>
+            <div class="icons-2">
+                <div class="account"><i class="fa fa-user"></i><span>Account</span></div>
+                <div class="logout"><i class="fas fa-power-off"></i><span>Logout</span></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="wide-banner"><img src="img/0287d3ba8b3330fca99f69e2001d3168.gif" alt="Banner"></div>
+        <div class="container">
+            <div class="card">
+                <div class="price-tag">¢6000</div>
+                <img src="hostel-images/465800942.jpg" alt="Hostel Image 1">
+                <div class="details">
+                    <h4>1 in a room self-contain</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Yeenua Street</p>
+                </div>
+            </div>
+            <!-- Repeat similar card divs as needed -->
+            <div class="card">
+                <div class="price-tag">¢6000</div>
+                <img src="hostel-images/465800942.jpg" alt="Hostel Image 1">
+                <div class="details">
+                    <h4>1 in a room self-contain</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Yeenua Street</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="price-tag">¢6000</div>
+                <img src="hostel-images/465800942.jpg" alt="Hostel Image 1">
+                <div class="details">
+                    <h4>1 in a room self-contain</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Yeenua Street</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="price-tag">¢6000</div>
+                <img src="hostel-images/465800942.jpg" alt="Hostel Image 1">
+                <div class="details">
+                    <h4>1 in a room self-contain</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Yeenua Street</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="price-tag">¢6000</div>
+                <img src="hostel-images/465800942.jpg" alt="Hostel Image 1">
+                <div class="details">
+                    <h4>1 in a room self-contain</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Yeenua Street</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="price-tag">¢6000</div>
+                <img src="hostel-images/465800942.jpg" alt="Hostel Image 1">
+                <div class="details">
+                    <h4>1 in a room self-contain</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Yeenua Street</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="price-tag">¢6000</div>
+                <img src="hostel-images/465800942.jpg" alt="Hostel Image 1">
+                <div class="details">
+                    <h4>1 in a room self-contain</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Yeenua Street</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="price-tag">¢6000</div>
+                <img src="hostel-images/465800942.jpg" alt="Hostel Image 1">
+                <div class="details">
+                    <h4>1 in a room self-contain</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Yeenua Street</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="price-tag">¢6000</div>
+                <img src="hostel-images/465800942.jpg" alt="Hostel Image 1">
+                <div class="details">
+                    <h4>1 in a room self-contain</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Yeenua Street</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="price-tag">¢6000</div>
+                <img src="hostel-images/465800942.jpg" alt="Hostel Image 1">
+                <div class="details">
+                    <h4>1 in a room self-contain</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Yeenua Street</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

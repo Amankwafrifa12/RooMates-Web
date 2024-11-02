@@ -57,7 +57,8 @@
     <div class="container">
         <div class="head-banner">
             <section class="banner" id="banner">
-                <img src="img/banner.jpg" alt="">
+                <img src="img/banner.jpg" alt="" class="desktop-banner">
+                <img src="img/banner.jpg" alt="" class="mobile-banner">
                 <div class="ads-text">
                     <p>Advertise on RooMates</p>
                     <p>call: <a href="tel:+233592725542">0592725542</a></p>
@@ -81,8 +82,9 @@
                     </div>
                     <div class="search-group">
                         <form>
-                            <input class="search-bar" type="text" placeholder="search Hostels closer to you">
-                            <button value="search" name="search-btn" id="search-btn">SEARCH</button>
+                            <input class="search-bar" type="text" placeholder="search for hostel">
+                            <button value="search" name="search-btn" id="search-btn"><span>SEARCH</span><i
+                                    class="fa fa-search" style="color: #ae0000;"></i></button>
                             <select name="Category" id="campuses" class="categories">
                                 <option value="0" selected disabled>Select Campus</option>
                                 <option value="all-campuses">All Campuses</option>
@@ -108,178 +110,79 @@
 
 
         <main>
+            <section class="campus-container">
+                <div class="heading-text">
+                    North Campus
+                </div>
 
-            <p>
-                Project Title: MyExpoApp
-                Description: Create a full Expo app with the following specifications:
-                1. App Purpose:
-                o The app should serve as a simple to-do list manager where users can add, edit, and delete tasks.
-                o The app should store tasks locally using AsyncStorage.
-                2. App Structure:
-                o Home Screen:
-                 Display a list of to-do tasks.
-                 Include an "Add Task" button that navigates to the "Add Task" screen.
-                o Add Task Screen:
-                 A form with input fields for the task name and description.
-                 A "Save" button that saves the task to the local storage and navigates back to the home screen.
-                o Edit Task Screen:
-                 Pre-filled form with the task details, allowing users to update the task.
-                 An "Update" button that saves changes to the local storage and navigates back to the home screen.
-                o Task Details Screen:
-                 Display the task name and description.
-                 Include "Edit" and "Delete" buttons.
-                3. Navigation:
-                o Use React Navigation to handle screen transitions.
-                o Include a bottom tab navigator with two tabs: "Tasks" (Home Screen) and "Settings" (a basic screen
-                with a placeholder text).
-                4. State Management:
-                o Manage app state using React's useState and useEffect hooks.
-                o Store and retrieve tasks from AsyncStorage.
-                5. Styling:
-                o Apply simple and clean styling using StyleSheet in React Native.
-                o The app should be responsive and work well on different screen sizes.
-                6. Other Features:
-                o Add a search bar on the home screen to filter tasks by name.
-                o Display a confirmation dialog when a user tries to delete a task.
-                o Implement a dark mode toggle in the Settings screen.
-                7. Testing:
-                o Include basic testing with Jest to ensure the core functionalities (adding, editing, deleting tasks)
-                work correctly.
-                8. Documentation:
-                o Provide clear comments in the code.
-                o Include a README file with instructions on how to run the app, including any necessary dependencies.
+                <div class="img-items">
+                    <div class="images-container">
 
+                        <div class="img-box">
+                            <div class="price-tag">¢6000</div>
+                            <img src="hostel-images/465800942.jpg">
+                            <div style="padding: 5px;">
+                                <h4>1 in a room self-contain</h4>
+                                <p> <span><i class="fas fa-map-marker-alt"></i></span> Yeenua Street</p>
+                            </div>
+                        </div>
 
-            </p>
-            <p>
-                Project Title: MyExpoApp
-                Description: Create a full Expo app with the following specifications:
-                1. App Purpose:
-                o The app should serve as a simple to-do list manager where users can add, edit, and delete tasks.
-                o The app should store tasks locally using AsyncStorage.
-                2. App Structure:
-                o Home Screen:
-                 Display a list of to-do tasks.
-                 Include an "Add Task" button that navigates to the "Add Task" screen.
-                o Add Task Screen:
-                 A form with input fields for the task name and description.
-                 A "Save" button that saves the task to the local storage and navigates back to the home screen.
-                o Edit Task Screen:
-                 Pre-filled form with the task details, allowing users to update the task.
-                 An "Update" button that saves changes to the local storage and navigates back to the home screen.
-                o Task Details Screen:
-                 Display the task name and description.
-                 Include "Edit" and "Delete" buttons.
-                3. Navigation:
-                o Use React Navigation to handle screen transitions.
-                o Include a bottom tab navigator with two tabs: "Tasks" (Home Screen) and "Settings" (a basic screen
-                with a placeholder text).
-                4. State Management:
-                o Manage app state using React's useState and useEffect hooks.
-                o Store and retrieve tasks from AsyncStorage.
-                5. Styling:
-                o Apply simple and clean styling using StyleSheet in React Native.
-                o The app should be responsive and work well on different screen sizes.
-                6. Other Features:
-                o Add a search bar on the home screen to filter tasks by name.
-                o Display a confirmation dialog when a user tries to delete a task.
-                o Implement a dark mode toggle in the Settings screen.
-                7. Testing:
-                o Include basic testing with Jest to ensure the core functionalities (adding, editing, deleting tasks)
-                work correctly.
-                8. Documentation:
-                o Provide clear comments in the code.
-                o Include a README file with instructions on how to run the app, including any necessary dependencies.
+                        <div class="img-box">
+                            <div class="price-tag">¢2500</div>
+                            <img src="hostel-images/agoo-hostel.jpg">
+                            <div style="padding: 5px;">
+                                <h4>2 in a room self-contain</h4>
+                                <p> <span><i class="fas fa-map-marker-alt"></i></span> Yeenua Street</p>
+                            </div>
+                        </div>
 
+                        <div class="img-box">
+                            <div class="price-tag">¢2500</div>
+                            <img src="hostel-images/465800942.jpg">
+                            <div style="padding: 5px;">
+                                <h4>1 in a room self-contain</h4>
+                                <p> <span><i class="fas fa-map-marker-alt"></i></span> Yeenua Street</p>
+                            </div>
+                        </div>
 
-            </p>
-            <p></p>
-            Project Title: MyExpoApp
-            Description: Create a full Expo app with the following specifications:
-            1. App Purpose:
-            o The app should serve as a simple to-do list manager where users can add, edit, and delete tasks.
-            o The app should store tasks locally using AsyncStorage.
-            2. App Structure:
-            o Home Screen:
-             Display a list of to-do tasks.
-             Include an "Add Task" button that navigates to the "Add Task" screen.
-            o Add Task Screen:
-             A form with input fields for the task name and description.
-             A "Save" button that saves the task to the local storage and navigates back to the home screen.
-            o Edit Task Screen:
-             Pre-filled form with the task details, allowing users to update the task.
-             An "Update" button that saves changes to the local storage and navigates back to the home screen.
-            o Task Details Screen:
-             Display the task name and description.
-             Include "Edit" and "Delete" buttons.
-            3. Navigation:
-            o Use React Navigation to handle screen transitions.
-            o Include a bottom tab navigator with two tabs: "Tasks" (Home Screen) and "Settings" (a basic screen with a
-            placeholder text).
-            4. State Management:
-            o Manage app state using React's useState and useEffect hooks.
-            o Store and retrieve tasks from AsyncStorage.
-            5. Styling:
-            o Apply simple and clean styling using StyleSheet in React Native.
-            o The app should be responsive and work well on different screen sizes.
-            6. Other Features:
-            o Add a search bar on the home screen to filter tasks by name.
-            o Display a confirmation dialog when a user tries to delete a task.
-            o Implement a dark mode toggle in the Settings screen.
-            7. Testing:
-            o Include basic testing with Jest to ensure the core functionalities (adding, editing, deleting tasks) work
-            correctly.
-            8. Documentation:
-            o Provide clear comments in the code.
-            o Include a README file with instructions on how to run the app, including any necessary dependencies.
+                        <div class="img-box">
+                            <div class="price-tag">¢2500</div>
+                            <img src="hostel-images/465800942.jpg">
+                            <div style="padding: 5px;">
+                                <h4>1 in a room self-contain</h4>
+                                <p> <span><i class="fas fa-map-marker-alt"></i></span> Yeenua Street</p>
+                            </div>
+                        </div>
 
+                        <div class="img-box">
+                            <div class="price-tag">¢2500</div>
+                            <img src="hostel-images/465800942.jpg">
+                            <div style="padding: 5px;">
+                                <h4>1 in a room self-contain</h4>
+                                <p> <span><i class="fas fa-map-marker-alt"></i></span> Yeenua Street</p>
+                            </div>
+                        </div>
 
-            </p>
-            <p></p>
-            Project Title: MyExpoApp
-            Description: Create a full Expo app with the following specifications:
-            1. App Purpose:
-            o The app should serve as a simple to-do list manager where users can add, edit, and delete tasks.
-            o The app should store tasks locally using AsyncStorage.
-            2. App Structure:
-            o Home Screen:
-             Display a list of to-do tasks.
-             Include an "Add Task" button that navigates to the "Add Task" screen.
-            o Add Task Screen:
-             A form with input fields for the task name and description.
-             A "Save" button that saves the task to the local storage and navigates back to the home screen.
-            o Edit Task Screen:
-             Pre-filled form with the task details, allowing users to update the task.
-             An "Update" button that saves changes to the local storage and navigates back to the home screen.
-            o Task Details Screen:
-             Display the task name and description.
-             Include "Edit" and "Delete" buttons.
-            3. Navigation:
-            o Use React Navigation to handle screen transitions.
-            o Include a bottom tab navigator with two tabs: "Tasks" (Home Screen) and "Settings" (a basic screen with a
-            placeholder text).
-            4. State Management:
-            o Manage app state using React's useState and useEffect hooks.
-            o Store and retrieve tasks from AsyncStorage.
-            5. Styling:
-            o Apply simple and clean styling using StyleSheet in React Native.
-            o The app should be responsive and work well on different screen sizes.
-            6. Other Features:
-            o Add a search bar on the home screen to filter tasks by name.
-            o Display a confirmation dialog when a user tries to delete a task.
-            o Implement a dark mode toggle in the Settings screen.
-            7. Testing:
-            o Include basic testing with Jest to ensure the core functionalities (adding, editing, deleting tasks) work
-            correctly.
-            8. Documentation:
-            o Provide clear comments in the code.
-            o Include a README file with instructions on how to run the app, including any necessary dependencies.
+                        <div class="img-box">
+                            <div class="price-tag">¢2500</div>
+                            <img src="hostel-images/agoo-hostel.jpg">
+                            <div style="padding: 5px;">
+                                <h4>2 in a room self-contain</h4>
+                                <p> <span><i class="fas fa-map-marker-alt"></i></span> Yeenua Street</p>
+                            </div>
+                        </div>
 
-
-            </p>
-
-
-
+                        <div class="img-box">
+                            <div class="price-tag">¢2500</div>
+                            <img src="hostel-images/465800942.jpg">
+                            <div style="padding: 5px;">
+                                <h4>1 in a room self-contain</h4>
+                                <p> <span><i class="fas fa-map-marker-alt"></i></span> Yeenua Street</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer>
             <p>Designed By: GenieDev © 2024</p>

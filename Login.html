@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #FFCC00;
+
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            max-width: 450px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+
+        }
+
+        h2 {
+            color: #540172;
+            text-align: center;
+
+        }
+
+        .form-control {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form-control label {
+            color: #540172;
+            margin-bottom: 5px;
+        }
+
+        .form-control input,
+        .form-control select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .form-control input:focus,
+        .form-control select:focus {
+            border-color: #540172;
+            outline: none;
+        }
+
+        /* Flex row for Student ID and Phone Number */
+
+
+
+
+        .toggle {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #540172;
+            cursor: pointer;
+        }
+
+        .toggle:hover {
+            color: #7B00A8;
+        }
+
+        .btn {
+            background-color: #540172;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #7B00A8;
+        }
+
+        /* Media query for larger screens */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div style="display: flex; justify-content: center; align-items: center; padding: 20px;"><img src="img/logo.png"
+                alt="" width="110px" style="margin-right: 7px;">
+            <h2 id="form-title">Login</h2>
+        </div>
+        <form id="form" action="login_signup.php" method="POST">
+            <!-- Login Form -->
+            <div id="login-fields">
+                <div class="form-control">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" name="login_email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-control">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="login_password" placeholder="Enter your password"
+                        required>
+                </div>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signup-fields" style="display: none;">
+                <div class="form-control">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first_name" required>
+                </div>
+                <div class="form-control">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last_name" required>
+                </div>
+                <div class="flex-row">
+                    <div class="form-control">
+                        <label for="student-id">Student ID/Applicant Number</label>
+                        <input type="text" id="student-id" name="student_id" required>
+                    </div>
+                    <div class="form-control">
+                        <label for="phone-number">Phone Number</label>
+                        <input type="tel" id="phone-number" name="phone_number" required>
+                    </div>
+                </div>
+                <div class="form-control">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-control">
+                    <label for="campus">Campus</label>
+                    <select id="campus" name="campus" required>
+                        <option value="" selected disabled>Select Campus</option>
+                        <option value="North Campus">North Campus</option>
+                        <option value="Central Campus">Central Campus</option>
+                        <option value="South Campus">South Campus</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+            </div>
+            <button class="btn" type="submit" name="submit" id="submitBtn">Login</button>
+        </form>
+        <div class="toggle" id="toggleForm">Don't have an account? Sign up</div>
+    </div>
+
+    <script>
+        const formTitle = document.getElementById('form-title');
+        const loginFields = document.getElementById('login-fields');
+        const signupFields = document.getElementById('signup-fields');
+        const submitBtn = document.getElementById('submitBtn');
+        const toggleForm = document.getElementById('toggleForm');
+
+        let isLogin = true;
+
+        toggleForm.addEventListener('click', () => {
+            isLogin = !isLogin;
+            formTitle.textContent = isLogin ? 'Login' : 'Sign Up';
+            submitBtn.textContent = isLogin ? 'Login' : 'Sign Up';
+            loginFields.style.display = isLogin ? 'block' : 'none';
+            signupFields.style.display = isLogin ? 'none' : 'block';
+            toggleForm.textContent = isLogin
+                ? "Don't have an account? Sign up"
+                : "Already have an account? Login";
+        });
+    </script>
+</body>
+
+</html>
